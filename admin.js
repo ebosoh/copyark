@@ -490,7 +490,7 @@ class AdminApplication {
                         const tr = document.createElement('tr');
                         tr.style.borderBottom = "1px solid var(--border)";
                         const img = t.photo_url ? `<img src="${t.photo_url}" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%;">` : '<i class="fas fa-user-circle fa-2x" style="color:var(--border);"></i>';
-                        const stars = '<i class="fas fa-star" style="color:#FFB800;"></i> '.repeat(parseInt(t.rating || 5));
+                        const stars = '<i class="fas fa-star" style="color:#FF8800;"></i> '.repeat(parseInt(t.rating || 5));
                         const escapedText = (t.text || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
                         tr.innerHTML = `
                             <td style="padding: 1rem;">${img}</td>
@@ -712,7 +712,7 @@ class AdminApplication {
                         tr.innerHTML = `
                             <td style="padding: 1rem;">${img}</td>
                             <td style="padding: 1rem; font-weight: 600; color:var(--primary);">${d.title}</td>
-                            <td style="padding: 1rem;"><span style="background:#FFD700; color:var(--primary); font-weight:700; font-size:0.8rem; padding:3px 8px; border-radius:4px;">${d.discount_value}</span></td>
+                            <td style="padding: 1rem;"><span style="background:var(--orange, #FF6600); color:#FFFFFF; font-weight:700; font-size:0.8rem; padding:3px 8px; border-radius:4px;">${d.discount_value}</span></td>
                             <td style="padding: 1rem; font-size:0.85rem;">${targetText}</td>
                             <td style="padding: 1rem;">${statusBadge}</td>
                             <td style="padding: 1rem; white-space:nowrap;">

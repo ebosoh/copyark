@@ -323,7 +323,7 @@ class App {
         this.cart.forEach(name => { counts[name] = (counts[name] || 0) + 1; });
 
         let message = `📞 My Phone Number: ${customerPhone.trim()}\n\n`;
-        message += `Hello Copier Maximum Solutions, I would like to order the following:\n\n`;
+        message += `Hello Copyark, I would like to order the following:\n\n`;
 
         let grandTotal = 0;
         for (const [name, qty] of Object.entries(counts)) {
@@ -420,7 +420,7 @@ class App {
         carousel.innerHTML = list.map((t, index) => {
             const activeClass = index === 0 ? 'active' : '';
             const ratingStars = Array(5).fill(0).map((_, i) => 
-                `<i class="fas fa-star" style="${i < parseInt(t.rating || 5) ? 'color: #FFB800' : 'color: #E2E8F0'}"></i>`
+                `<i class="fas fa-star" style="${i < parseInt(t.rating || 5) ? 'color: #FF8800' : 'color: #E2E8F0'}"></i>`
             ).join('');
 
             const avatar = t.photo_url && t.photo_url.length > 10

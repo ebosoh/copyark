@@ -1,6 +1,6 @@
 window.CONFIG = {
     // Branding
-    siteName: "Copier Maximum Solutions",
+    siteName: "Copyark",
 
     // Google Sheets
     // The ID of the Google Sheet containing product data

@@ -1,6 +1,6 @@
-# Copier Maximum Solutions
+# Copyark
 
-A premium, mobile-first e-commerce website for Copier Maximum Solutions, specializing in refurbished copiers, printers, and office supplies.
+A premium, mobile-first e-commerce website for Copyark, specializing in refurbished copiers, printers, and office supplies. Designed with a luxury Black, Orange, and Blue theme.
 
 ## 🚀 Features
 - **Modern Design**: Premium aesthetic with glassmorphism and animated UI.
