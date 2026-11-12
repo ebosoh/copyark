@@ -28,19 +28,59 @@ class App {
         const menuBtn = document.querySelector('.mobile-menu-toggle');
         const nav = document.querySelector('.desktop-nav');
         if (menuBtn && nav) {
-            menuBtn.addEventListener('click', () => {
-                nav.classList.toggle('hidden-mobile');
-                nav.classList.toggle('mobile-active');
+            const toggleMenu = (open) => {
+                const isOpen = open !== undefined ? open : !nav.classList.contains('mobile-active');
+                if (isOpen) {
+                    nav.classList.remove('hidden-mobile');
+                    nav.classList.add('mobile-active');
+                    menuBtn.classList.add('active');
+                    menuBtn.setAttribute('aria-expanded', 'true');
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    }
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    nav.classList.add('hidden-mobile');
+                    nav.classList.remove('mobile-active');
+                    menuBtn.classList.remove('active');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                    document.body.style.overflow = '';
+                }
+            };
+
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMenu();
             });
+
+            // Dedicated Close button inside mobile menu
+            const closeBtn = nav.querySelector('.mobile-nav-close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleMenu(false);
+                });
+            }
 
             // Close mobile menu when links are clicked
             nav.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
-                    if (nav.classList.contains('mobile-active')) {
-                        nav.classList.add('hidden-mobile');
-                        nav.classList.remove('mobile-active');
-                    }
+                    toggleMenu(false);
                 });
+            });
+
+            // Close when tapping outside the menu overlay
+            document.addEventListener('click', (e) => {
+                if (nav.classList.contains('mobile-active') && !nav.contains(e.target) && !menuBtn.contains(e.target)) {
+                    toggleMenu(false);
+                }
             });
         }
 
