@@ -344,7 +344,7 @@ class App {
 
         message += `\n\nKindly confirm availability and arrange delivery. Thank you! 🙏`;
 
-        const waNumber = "254717520268";
+        const waNumber = "254720615277";
         const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
     }
@@ -954,7 +954,7 @@ class App {
         message += `💬 *Issue Description:*\n${desc}\n\n`;
         message += `Please assign a technician to contact me. Thank you!`;
 
-        const waNumber = "254717520268";
+        const waNumber = "254720615277";
         const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
         form.reset();
@@ -982,7 +982,7 @@ class App {
         message += `💰 *Estimated Total Quote:* ${totalText}\n\n`;
         message += `Please confirm stock availability and send an official invoice draft. Thank you!`;
 
-        const waNumber = "254717520268";
+        const waNumber = "254720615277";
         const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
         window.open(url, '_blank');
         form.reset();
