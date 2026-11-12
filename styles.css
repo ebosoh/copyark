@@ -1263,6 +1263,20 @@ h3 {
 }
 
 /* --- WhatsApp Button (Corrected) --- */
+@-webkit-keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.9);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
 @keyframes pulse-green {
     0% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.9);
@@ -2214,6 +2228,7 @@ h3 {
         position: fixed !important;
         bottom: 20px !important;
         right: 20px !important;
+        margin: 0 !important;
         background-color: #25D366 !important;
         color: white !important;
         width: 58px !important;
@@ -2222,13 +2237,14 @@ h3 {
         align-items: center !important;
         justify-content: center !important;
         font-size: 32px !important;
-        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45) !important;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
         z-index: 10000 !important;
         text-decoration: none !important;
         border: none !important;
         cursor: pointer !important;
-        transition: transform 0.25s ease, background-color 0.25s ease !important;
-        animation: pulseGreenMobile 2s infinite !important;
+        animation: pulse-green 2s infinite !important;
+        -webkit-animation: pulse-green 2s infinite !important;
+        transition: transform 0.3s ease, background-color 0.3s ease !important;
         -webkit-tap-highlight-color: transparent !important;
     }
 
@@ -2236,24 +2252,13 @@ h3 {
     .whatsapp-float-mobile:focus {
         background-color: #128C7E !important;
         color: white !important;
-        transform: scale(1.08) !important;
+        transform: scale(1.1) !important;
+        box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6) !important;
     }
 
     .whatsapp-float-mobile:active {
         transform: scale(0.92) !important;
         background-color: #075E54 !important;
-    }
-
-    @keyframes pulseGreenMobile {
-        0% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.8), 0 4px 16px rgba(37, 211, 102, 0.4);
-        }
-        70% {
-            box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 4px 16px rgba(37, 211, 102, 0.4);
-        }
-        100% {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 4px 16px rgba(37, 211, 102, 0.4);
-        }
     }
 
     /* Floating Cart Button Mobile CTA (Positioned above WhatsApp button) */
